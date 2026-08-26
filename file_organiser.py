@@ -117,6 +117,7 @@ class handle_user:
 class organiser(handle_user):
     def __init__(self, path):
         super().__init__(path)
+        
     def make_folders(self):
         files = self.take_custom_files() if self.specific_files and not self.specific_folder else self.take_all_files()
         folders = {}
