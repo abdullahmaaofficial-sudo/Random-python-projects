@@ -79,7 +79,9 @@ class AdvanceSystemMove:
         return False
 
 print("===== Tac-Tic-Toe =====")
-Game = TacTicToe(user_marker = 'O', system_marker = 'X')
+user_marker = 'O'
+system_marker = 'X'
+Game = TacTicToe(user_marker = user_marker, system_marker = system_marker)
 Game.display_board()
 
 while True:
@@ -103,15 +105,16 @@ while True:
         continue
     
     Game.user_move(move)
-    if Game.check_conditions(marker = 'O'):
+    if Game.check_conditions(marker = user_marker):
         Game.display_board()
         print("~ You Win!")
         break
 
-    if not AdvanceSystemMove(user_marker = 'O', system_marker = 'X').make_the_move():
+    system = AdvanceSystemMove(user_marker = user_marker, system_marker = system_marker)
+    if not system.make_the_move():
         Game.system_move()
 
-    if Game.check_conditions(marker = 'X'):
+    if Game.check_conditions(marker = system_marker):
         Game.display_board()
         print("~ You Lose!")
         break
