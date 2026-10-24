@@ -54,6 +54,10 @@ def show_time():
     while True:
         clear_terminal()
         current_time = datetime.now().strftime("%H:%M:%S")
+        current_time_l = current_time.split(':')
+        hours = int(current_time_l[0]) 
+        if hours > 12:
+            current_time = f"{hours - 12:02d}:{current_time_l[1]}:{current_time_l[2]}"
         show_numbers(current_time)
         time.sleep(1)
 
@@ -69,4 +73,3 @@ if choice == '1':
     show_time()
 elif choice == '2':
     set_timer()
-
