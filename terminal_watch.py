@@ -23,22 +23,22 @@ def show_numbers(numbers : str):
 
 def clear_terminal():
     os.system('cls')
-
-def set_timer():
+def user_input():
     while True:
         try:
-            user_input = int(input("Set timer (in minutes): ").strip())
+            user_inp = int(input("Set timer (in minutes): ").strip())
         except ValueError:
             print("Input error: not a number.")
             continue
-        if user_input <= 0:
+        if user_inp <= 0:
             print("Input error: invalid time.")
             continue
-        break
-
-    minutes = user_input - 1
+        return user_inp
+    
+def set_timer():
+    minutes = user_input() - 1
     seconds = 60
-
+    
     while minutes >= 0:
         clear_terminal()
         seconds -= 1
