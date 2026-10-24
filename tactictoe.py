@@ -79,7 +79,7 @@ class GameConditions:
         diagonal_2 = all([self.grid[0][2] == self.marker, self.grid[1][1] == self.marker, self.grid[2][0] == self.marker])
         return any([diagonal_1,diagonal_2])
 
-print("===== Tac-Tic-Toe =====")
+print("====== Tac-Tic-Toe ======")
 user_marker = 'O'
 system_marker = 'X'
 Game = TacTicToe(user_marker = user_marker, system_marker = system_marker)
